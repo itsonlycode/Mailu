@@ -33,5 +33,3 @@ EXPOSE 80/tcp
 VOLUME ["/data"]
 
 CMD /start.py
-
-HEALTHCHECK CMD curl -f -L http://localhost/ || exit 1

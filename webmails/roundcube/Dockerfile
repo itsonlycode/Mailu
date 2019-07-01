@@ -1,4 +1,5 @@
 FROM php:7.2-apache
+ENV PORT 8080
 #Shared layer between rainloop and roundcube
 RUN apt-get update && apt-get install -y \
   python3 curl python3-pip git \
@@ -31,7 +32,7 @@ COPY config.inc.php /var/www/html/config/
 COPY start.py /start.py
 RUN chmod -R 777 /usr/local/etc/php/conf.d
 
-EXPOSE 80/tcp
+EXPOSE 8080/tcp
 VOLUME ["/data"]
 
 CMD /start.py

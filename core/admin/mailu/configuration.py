@@ -26,8 +26,8 @@ DEFAULT_CONFIG = {
     'STATS_ENDPOINT': '0.{}.stats.mailu.io',
     # Common configuration variables
     'SECRET_KEY': 'changeMe',
-    'DOMAIN': 'mailu.io',
-    'HOSTNAMES': 'mail.mailu.io,alternative.mailu.io,yetanother.mailu.io',
+    'DOMAIN': 'voluntas.io',
+    'HOSTNAMES': 'mailu.voluntas.io',
     'POSTMASTER': 'postmaster',
     'TLS_FLAVOR': 'cert',
     'AUTH_RATELIMIT': '10/minute;1000/hour',

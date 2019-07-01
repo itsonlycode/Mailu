@@ -25,12 +25,13 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install git+https://github.com/usrpro/MailuStart.git#egg=mailustart
 
+
 COPY php.ini /php.ini
 COPY config.inc.php /var/www/html/config/
 COPY start.py /start.py
+RUN chmod -R 777 /usr/local/etc/php/conf.d
 
 EXPOSE 80/tcp
 VOLUME ["/data"]
-USER root
 
 CMD /start.py

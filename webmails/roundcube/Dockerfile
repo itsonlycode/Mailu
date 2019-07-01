@@ -8,6 +8,8 @@ RUN apt-get update && apt-get install -y \
 
 ENV ROUNDCUBE_URL https://github.com/roundcube/roundcubemail/releases/download/1.3.9/roundcubemail-1.3.9-complete.tar.gz
 
+CMD sed -i "s/80/$PORT/g" /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
+
 RUN apt-get update && apt-get install -y \
       zlib1g-dev python3-jinja2 \
  && docker-php-ext-install zip \

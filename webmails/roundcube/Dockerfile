@@ -23,8 +23,9 @@ RUN apt-get update && apt-get install -y \
  && chown -R www-data: logs temp \
  && rm -rf /var/lib/apt/lists
 
- RUN pip3 install git+https://github.com/usrpro/MailuStart.git#egg=mailustart
+RUN pip3 install git+https://github.com/usrpro/MailuStart.git#egg=mailustart
 
+RUN chmod 777 /usr/local/etc/php/conf.d
 COPY php.ini /php.ini
 COPY config.inc.php /var/www/html/config/
 COPY start.py /start.py

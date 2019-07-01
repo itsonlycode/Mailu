@@ -16,6 +16,8 @@ COPY start.py /start.py
 EXPOSE 25/tcp 10025/tcp
 VOLUME ["/data"]
 
+RUN chmod 666 /etc/postfix/outclean_header_filter.cf
+
 CMD /start.py
 
 HEALTHCHECK --start-period=350s CMD echo QUIT|nc localhost 25|grep "220 .* ESMTP Postfix"

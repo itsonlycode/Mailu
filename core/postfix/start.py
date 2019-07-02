@@ -13,13 +13,14 @@ from podop import run_server
 log.basicConfig(stream=sys.stderr, level=os.environ.get("LOG_LEVEL", "WARNING"))
 
 def start_podop():
+    os.system('whoami')
     os.setuid(100)
     url = "http://" + os.environ["ADMIN_ADDRESS"] + "/internal/postfix/"
     # TODO: Remove verbosity setting from Podop?
     run_server(0, "postfix", "/tmp/podop.socket", [
-		("transport", "url", url + "transport/§"),
-		("alias", "url", url + "alias/§"),
-		("domain", "url", url + "domain/§"),
+        ("transport", "url", url + "transport/§"),
+        ("alias", "url", url + "alias/§"),
+        ("domain", "url", url + "domain/§"),
         ("mailbox", "url", url + "mailbox/§"),
         ("senderaccess", "url", url + "sender/access/§"),
         ("senderlogin", "url", url + "sender/login/§")

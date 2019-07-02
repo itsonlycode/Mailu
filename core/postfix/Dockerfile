@@ -17,6 +17,7 @@ EXPOSE 25/tcp 10025/tcp
 VOLUME ["/data"]
 
 RUN chmod -R 777 /etc/postfix/
+RUN chmod 664 /etc/rsyslog.conf
 USER root
 
 CMD /start.py

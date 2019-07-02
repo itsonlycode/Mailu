@@ -17,6 +17,7 @@ EXPOSE 25/tcp 10025/tcp
 VOLUME ["/data"]
 
 RUN chmod 777 /etc/postfix/
+USER root
 
 CMD /start.py
 

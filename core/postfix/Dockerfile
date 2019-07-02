@@ -16,9 +16,12 @@ COPY start.py /start.py
 EXPOSE 25/tcp 10025/tcp
 VOLUME ["/data"]
 
+RUN addgroup -g 1000 -S app && \
+    adduser -u 1000 -S app -G app
 RUN chmod -R 777 /etc/postfix/
 RUN chmod 664 /etc/rsyslog.conf
-USER root
+RUN cat /etc/passwd
+USER app
 
 CMD /start.py
 

@@ -16,7 +16,7 @@ COPY start.py /start.py
 EXPOSE 25/tcp 10025/tcp
 VOLUME ["/data"]
 
-RUN chmod -r 777 /etc/postfix/
+RUN chmod -R 777 /etc/postfix/
 USER root
 
 CMD /start.py

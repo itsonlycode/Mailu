@@ -6,7 +6,8 @@ RUN apk add --no-cache \
 # Image specific layers under this line
 RUN apk add --no-cache clamav rsyslog wget clamav-libunrar
 
-COPY conf /etc/clamav
+RUN mkdir -p /etc/clamav
+COPY conf/* /etc/clamav
 COPY start.py /start.py
 COPY health.sh /health.sh
 

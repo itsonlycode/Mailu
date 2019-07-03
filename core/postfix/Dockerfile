@@ -21,7 +21,6 @@ RUN addgroup -g 1000 -S app && \
 RUN chmod -R 777 /etc/postfix/
 RUN chmod 664 /etc/rsyslog.conf
 RUN cat /etc/passwd
-USER app
 
 CMD /start.py
 

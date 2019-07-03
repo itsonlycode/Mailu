@@ -7,7 +7,7 @@ RUN apk add --no-cache \
 RUN apk add --no-cache clamav rsyslog wget clamav-libunrar
 
 RUN mkdir -p /etc/clamav
-COPY conf/* /etc/clamav
+COPY conf/clamd.conf conf/freshclam.conf /etc/clamav
 COPY start.py /start.py
 COPY health.sh /health.sh
 
